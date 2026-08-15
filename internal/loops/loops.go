@@ -97,7 +97,7 @@ func Detect(graph network.Graph, analysis network.Analysis, layout traverse.Resu
 		return Result{}, err
 	}
 	result := Result{
-		IndependentCount: len(graph.Edges) - len(graph.Stations) + 1,
+		IndependentCount: len(graph.Edges) - len(graph.Stations) + len(analysis.Components),
 	}
 	if result.IndependentCount < 0 {
 		result.IndependentCount = 0
